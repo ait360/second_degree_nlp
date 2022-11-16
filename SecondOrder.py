@@ -9,14 +9,14 @@ from tensorflow.python.keras import initializers
 
 
 
-class SecondDegreeCell(Layer):
+class SecondOrderCell(Layer):
     def __init__(self, units, activation='sigmoid', use_bias=True,
                     kernel_initializer='glorot_uniform',
                     bias_initializer='zeros',**kwargs):
         if units < 0:
             raise ValueError(f'Received an invalid value for units, expected '
                              f'a positive integer, got {units}.')
-        super(SecondDegreeCell, self).__init__(**kwargs)
+        super(SecondOrderCell, self).__init__(**kwargs)
         self.units = units
         self.activation = activations.get(activation)
         self.use_bias = use_bias
